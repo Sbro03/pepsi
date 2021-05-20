@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <title>Responsive Pepsi Website Landing Page</title>
+</head>
+<body class="body">
+  <section class="sec">
+    <header class="reveal">
+      <a href="#"><img src="logo.png" class="logo zoom"></a>
+      <div class="toggleMenu zoom" onclick="menuToogle()"></div>
+      <ul class="navigation">
+        <li><a class="zoom" href="#">Home</a></li>
+        <li><a class="zoom" href="#">Products</a></li>
+        <li><a class="zoom" href="#">What's New</a></li>
+        <li><a class="zoom" href="#">Newsletter</a></li>
+        <li><a class="zoom" href="#">Contact</a></li>
+      </ul>
+    </header>
+    <div class="content">
+      <div class="textBox reveal">
+        <h2>That's What<br><span>I like</span></h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat, dolor
+           expedita sunt labore. Asperiores nulla vel ipsa consequatur.</p>
+        <a class="reveal zoom"href="#">View All Products</a>
+      </div>
+      <div class="imgBox zoom">
+        <img src="pepsi001.png" class="pepsi">
+      </div>
+    </div>
+    <ul class="thumb reveal">
+      <li><img class="zoom" src="pepsi001.png" onclick="imgSlider('pepsi001.png'), changeBgColor('#0062be')"></li>
+      <li><img class="zoom" src="pepsi002.png" onclick="imgSlider('pepsi002.png'), changeBgColor('#e60c2c')"></li>
+      <li><img class="zoom" src="pepsi003.png" onclick="imgSlider('pepsi003.png'), changeBgColor('#1e1e1e')"></li>
+    </ul>
+    <ul class="sci">
+      <li><a href="#"><img class="zoom" src="facebook.png" alt=""></a></li>
+      <li><a href="#"><img class="zoom" src="twitter.png" alt=""></a></li>
+      <li><a href="#"><img class="zoom" src="instagram.png" alt=""></a></li>
+    </ul>
+    <div class="gap"></div>
+    <div class="footer reveal">
+      <div class="footerLogo">
+        <img class="zoom" src="logo.png" alt="">
+      </div>
+      <div class="footerContent">
+        <div class="footerTextBox reveal">
+          <h4>Contacts</h4>
+          <p>Suka blyat</p>
+        </div>
+        <div class="footerTextBox reveal">
+          <h4>Contacts</h4>
+          <p>Suka blyat</p>
+        </div>
+        <div class="footerTextBox reveal">
+          <h4>Contacts</h4>
+          <p>Suka blyat</p>
+        </div>
+      </div>
+    </div>
+</section>
+
+<script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
+<script type="text/javascript">
+  function imgSlider(anything){
+    document.querySelector('.pepsi').src = anything;
+  };
+  function changeBgColor(color){
+    const sec = document.querySelector('body');
+    sec.style.background = color;
+  }
+  function menuToogle(){
+    const toggleMenu = document.querySelector('.toggleMenu');
+    const navigation = document.querySelector('.navigation');
+    toggleMenu.classList.toggle('active');
+    navigation.classList.toggle('active');
+
+  }
+  ScrollReveal().reveal('.zoom',{ duration: 1500, easing: 'cubic-bezier(.215, .61, .355, 1)',  interval: 200,  scale: 0.65 , mobile:false});
+  ScrollReveal().reveal('.reveal',{ distance: '100px',duration: 1500, easing: 'cubic-bezier(.215, .61, .355, 1)',  interval: 600  });
+
+
+</script>
+
+</body>
+</html>
